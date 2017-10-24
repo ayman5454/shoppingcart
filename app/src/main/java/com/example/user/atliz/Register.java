@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import android.util.Log;
@@ -71,7 +70,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
                 Log.d("AUTH_USER", String.valueOf(user));
                 if (user != null) {
-                    Intent intent = new Intent(Register.this, AtlizShops.class);
+                    Intent intent = new Intent(Register.this, AtlizShopActivity.class);
                     startActivity(intent);
                     finish();
                     Toast.makeText(Register.this,"logged in", Toast.LENGTH_SHORT).show();
@@ -144,7 +143,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(Register.this, "success", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Register.this, AtlizShops.class);
+                            Intent intent = new Intent(Register.this, AtlizShopActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -167,7 +166,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View view) {
 
-            Intent intent = new Intent(Register.this, AtlizShops.class);
+            Intent intent = new Intent(Register.this, AtlizShopActivity.class);
         startActivity(intent);
     }
 }
